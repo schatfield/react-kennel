@@ -3,9 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Kennel from './components/Kennel';
-
 import { BrowserRouter as Router } from "react-router-dom"
+import Kennel from './components/Kennel';
 
 ReactDOM.render(
     <Router>
