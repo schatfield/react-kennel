@@ -5,7 +5,7 @@ class LocationCard extends Component {
     return (
       <div className="card">
         <div className="card-content">
-          <p>Location: Paris</p>
+          <p>Location</p>
         </div>
       </div>
     );
