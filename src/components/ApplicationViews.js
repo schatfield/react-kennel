@@ -4,7 +4,7 @@ import Home from './home/Home'
 import AnimalList from './animal/AnimalList'
 // //only include these once they are built - previous practice exercise
 import LocationCard from './location/LocationCard'
-import EmployeeCard from './employee/EmployeeCard'
+import EmployeeList from './employee/EmployeeList'
 import OwnerCard from './owner/OwnerCard'
 
 
@@ -23,7 +23,7 @@ class ApplicationViews extends Component {
           return <LocationCard />
         }} />
         <Route exact path="/employee" render={(props) => {
-          return <EmployeeCard />
+          return <EmployeeList />
         }} />
         <Route exact path="/owner" render={(props) => {
           return <OwnerCard />
