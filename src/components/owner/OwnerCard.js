@@ -5,7 +5,7 @@ class OwnerCard extends Component {
     return (
       <div className="card">
         <div className="card-content">
-          <p>Owner: Sharon</p>
+          <p>Owner: </p>
         </div>
       </div>
     );
