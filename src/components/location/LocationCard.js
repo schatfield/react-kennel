@@ -11,6 +11,7 @@ class LocationCard extends Component {
           <h3><b>{this.props.location.location}</b></h3>
            <p>Location</p>
           <button type="button" onClick={() => this.props.deleteLocation(this.props.location.id)}>Discharge</button>
+          <Link to={`/locations/${this.props.location.id}`}><button>Details</button></Link>
         </div>
       </div>
     );
