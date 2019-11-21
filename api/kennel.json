@@ -1,25 +1,63 @@
 {
-    "animals": [
-        { "id": 1, "name": "Pierre", "breed": "French Bull dog"},
-        { "id": 2, "name": "Jack", "breed": "German Sheperd" },
-        { "id": 3, "name": "Enki", "breed": "cat" }
-    ],
+  "animals": [
+    {
+      "id": 1,
+      "name": "Jack",
+      "breed": "German Sheperd"
+    },
 
-    "employees": [
-        { "id": 1, "name": "John Chatfield"},
-        { "id": 2, "name": "Newt Scamander"},
-        { "id": 3, "name": "Professor Sprout"}
-    ],
+    {
+      "id": 2,
+      "name": "Pierre",
+      "breed": "French Bulldog"
+    },
 
-    "locations": [
-        { "id": 1, "location": "Nashville, TN"},
-        { "id": 2, "location": "London, England"},
-        { "id": 3, "location": "Hogwarts School of Witchcraft and Wizardry"}
-    ],
-
-    "owners": [
-        { "id": 1, "name":"Eddy"},
-        { "id": 2, "name": "Shawna"},
-        { "id": 3, "name": "Alice Cooper" }
-    ]
+    {
+      "id": 3,
+      "name": "Enki",
+      "breed": "cat"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "John Chatfield"
+    },
+    {
+      "id": 2,
+      "name": "Newt Scamander"
+    },
+    {
+      "id": 3,
+      "name": "Professor Sprout"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "location": "Nashville, TN"
+    },
+    {
+      "id": 2,
+      "location": "London, England"
+    },
+    {
+      "id": 3,
+      "location": "Hogwarts School of Witchcraft and Wizardry"
+    }
+  ],
+  "owners": [
+    {
+      "id": 1,
+      "name": "Eddy"
+    },
+    {
+      "id": 2,
+      "name": "Shawna"
+    },
+    {
+      "id": 3,
+      "name": "Alice Cooper"
+    }
+  ]
 }
