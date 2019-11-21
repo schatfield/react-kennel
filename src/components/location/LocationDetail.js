@@ -13,8 +13,9 @@ class LocationDetail extends Component {
     //get(id) from LocationManager and hang on to the data; put it into state
     LocationManager.get(this.props.locationId)
     .then((location) => {
+      console.log("Locations: ", location);
       this.setState({
-        location: location.locations
+        location: location.location
       });
     });
   }
