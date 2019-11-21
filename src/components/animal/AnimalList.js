@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
     //import the components we will need
-    import AnimalCard from './AnimalCard'
-    import AnimalManager from '../../modules/AnimalManager'
+    import AnimalCard from './AnimalCard';
+    import AnimalManager from '../../modules/AnimalManager';
 
     class AnimalList extends Component {
         //define what this component needs to render
@@ -51,7 +51,7 @@ import React, { Component } from 'react'
     }
 
 
-export default AnimalList
+export default AnimalList;
 
 // the best placd to put console logs to troublshoot are between your render and your return
 

@@ -35,6 +35,7 @@ import React, { Component } from 'react'
 
         render(){
             console.log("EmployeeList: Render");
+            console.log(this.state)
           
             return(
               <div className="container-cards">

@@ -13,13 +13,13 @@
 
     "locations": [
         { "id": 1, "location": "Nashville, TN"},
-        { "id": 2, "location": "London"},
-        { "id": 3, "location": "Hogwarts"}
+        { "id": 2, "location": "London, England"},
+        { "id": 3, "location": "Hogwarts School of Witchcraft and Wizardry"}
     ],
 
     "owners": [
         { "id": 1, "name":"Eddy"},
         { "id": 2, "name": "Shawna"},
-        { "id": 3, "name": "citizen of the world" }
+        { "id": 3, "name": "Alice Cooper" }
     ]
 }
