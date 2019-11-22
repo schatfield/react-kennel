@@ -5,17 +5,20 @@
       "name": "Jack",
       "breed": "German Sheperd"
     },
-
     {
       "id": 2,
       "name": "Pierre",
       "breed": "French Bulldog"
     },
-
     {
       "id": 3,
       "name": "Enki",
       "breed": "cat"
+    },
+    {
+      "name": "Fang",
+      "breed": "Neapolitan Mastiff",
+      "id": 4
     }
   ],
   "employees": [

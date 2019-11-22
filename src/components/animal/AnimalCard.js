@@ -21,3 +21,9 @@ class AnimalCard extends Component {
 }
 
 export default AnimalCard;
+
+// onClick is function call for the delete functionality. the definition is on AnimalList and looks like this:
+// <AnimalCard
+// key={animal.id}
+// animal={animal}
+// deleteAnimal={this.deleteAnimal} 
