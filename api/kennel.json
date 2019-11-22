@@ -3,19 +3,22 @@
     {
       "id": 1,
       "name": "Jack",
-      "breed": "German Sheperd"
+      "breed": "German Shepherd"
     },
-
     {
       "id": 2,
       "name": "Pierre",
       "breed": "French Bulldog"
     },
-
     {
       "id": 3,
       "name": "Enki",
       "breed": "cat"
+    },
+    {
+      "name": "Fang",
+      "breed": "Neapolitan Mastiff",
+      "id": 4
     }
   ],
   "employees": [
