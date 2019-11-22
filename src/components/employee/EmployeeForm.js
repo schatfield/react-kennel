@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EmployeeManager from '../../modules/AnimalManager';
+import EmployeeManager from '../../modules/EmployeeManager';
 import './EmloyeeForm.css'
 
 
@@ -50,15 +50,7 @@ class EmployeeForm extends Component {
                         id="employeeName"
                         placeholder="name"
                         />
-                        <label htmlFor="animalName">Name</label>
-                        <input
-                        type="text"
-                        required
-                        onChange={this.handleFieldChange}
-                        id="breed"
-                        placeholder="Breed"
-                        />
-                        <label htmlFor="breed">Breed</label>
+                        <label htmlFor="employeeName">Name</label>
                     </div>
                     <div className="alignRight">
                         <button
@@ -74,4 +66,4 @@ class EmployeeForm extends Component {
     }
 }
 
-export default AnimalForm
+export default EmployeeForm
