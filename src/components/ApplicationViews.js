@@ -13,6 +13,7 @@ import AnimalEditForm from './animal/AnimalEditForm'
 import Login from './auth/Login'
 import EmployeeForm from './employee/EmployeeForm'
 import LocationForm from './location/LocationForm'
+import EmployeeWithAnimals from './employee/EmployeeWithAnimals'
 
 
 

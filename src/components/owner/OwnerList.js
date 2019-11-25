@@ -8,18 +8,18 @@ class OwnerList extends Component {
     // the word "class" here refers the object component? we use "this" below with dot notation becaseu this is an object
     state = {
         owners: [],
-    }
+    };
 
     componentDidMount() {
         console.log("OWNER LIST: ComponentDidMount");
-        //getAll from AnimalManager and hang on to that data; put it in state
+        //getAll from OwnerManager and hang on to that data; put it in state
         OwnerManager.getAll()
             .then((ownersArray) => {
                 this.setState({
                     owners: ownersArray
                 })
             })
-    }
+    };
 
     deleteOwner = id => {
         OwnerManager.delete(id)
@@ -31,24 +31,27 @@ class OwnerList extends Component {
                         })
                     })
             })
-    }
+    };
 
     render() {
         console.log("OwnerList: Render");
 
         return (
+            <React.Fragment>
             <div className="container-cards">
-                {this.state.owners.map(owner=>
+                {this.state.owners.map(owner =>
                     <OwnerCard
                         key={owner.id}
                         owner={owner}
                         deleteOwner={this.deleteOwner}
+                    
                     />
-                )}
+                )};
             </div>
+        </React.Fragment>
         )
-    }
-}
+    };
+};
 
 
 export default OwnerList
