@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LocationManager from '../../modules/LocationManager';
-import './LocationForm.css'
+import './LocationForm.css';
 
 
 class LocationForm extends Component {
@@ -26,11 +26,11 @@ class LocationForm extends Component {
             window.alert("Please input an location name");
         } else {
             this.setState({ loadingStatus: true });
-            const employee = {
+            const location = {
                 name: this.state.LocationName,
             };
 
-            // Create the animal and redirect user to animal list
+            // Create the location and redirect user to location list
             LocationManager.post(location)
             .then(() => this.props.history.push("/locations"));
         }
@@ -49,16 +49,16 @@ class LocationForm extends Component {
                         type="text"
                         required
                         onChange={this.handleFieldChange}
-                        id="employeeName"
+                        id="locationName"
                         placeholder="name"
                         />
-                        <label htmlFor="employeeName">Name</label>
+                        <label htmlFor="locationName">Location Name</label>
                     </div>
                     <div className="alignRight">
                         <button
                         type="button"
                         disabled={this.state.loadingStatus}
-                        onClick={this.constructNewEmployee}
+                        onClick={this.constructNewLocation}
                         >Submit</button>
                     </div>
                 </fieldset>
@@ -68,4 +68,4 @@ class LocationForm extends Component {
     }
 }
 
-export default LocationForm
+export default LocationForm;

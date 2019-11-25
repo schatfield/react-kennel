@@ -11,8 +11,11 @@ class EmployeeForm extends Component {
 
 
     handleFieldChange = evt => {
+        // console.log("Event target id", evt.target.id)
+        // console.log("Event target value", evt.target.value)
         const stateToChange = {};
         stateToChange[evt.target.id] = evt.target.value;
+        console.log("state to change", stateToChange)
         this.setState(stateToChange);
     };
 
