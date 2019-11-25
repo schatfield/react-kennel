@@ -11,6 +11,8 @@ import LocationDetail from './location/LocationDetail'
 import AnimalForm from './animal/AnimalForm'
 import AnimalEditForm from './animal/AnimalEditForm'
 import Login from './auth/Login'
+import EmployeeForm from './employee/EmployeeForm'
+import LocationForm from './location/LocationForm'
 
 
 
@@ -34,18 +36,10 @@ class ApplicationViews extends Component {
             return <Redirect to="/login" />
           }
         }} />
-        <Route exact path="/animals/:animalId(\d+)" render={(props) => {
-          // Pass the animalId to the AnimalDetailComponent
-          // console.log("Props from react-router-dom", props)
-          return <AnimalDetail
-            animalId={parseInt(props.match.params.animalId)} {...props} />
+        
+        <Route path="/employees/:employeeId(\d+)/details" render={(props) => {
+          return <EmployeeWithAnimals {...props} />
         }} />
-
-        <Route
-          path="/animals/:animalId(\d+)/edit" render={props => {
-            return <AnimalEditForm {...props} />
-          }}
-        />
 
         {/*
   This is a new route to handle a URL with the following pattern:
@@ -55,30 +49,61 @@ class ApplicationViews extends Component {
   matches only numbers after the final slash in the URL
   http://localhost:3000/animals/jack
 */}
+        <Route exact path="/animals/:animalId(\d+)" render={(props) => {
+          // Pass the animalId to the AnimalDetailComponent
+          // console.log("Props from react-router-dom", props)
+          return <AnimalDetail
+            animalId={parseInt(props.match.params.animalId)} {...props} />
+        }} />
 
+        <Route path="/animals/:animalId(\d+)/edit" render={props => {
+          return <AnimalEditForm {...props} />
+        }}
+        />
 
         <Route path="/animals/new" render={(props) => {
           return <AnimalForm {...props} />
         }} />
 
-        <Route path="/login" component={Login} />
+
 
 
         {/* Make sure you add the `exact` attribute here */}
         <Route exact path="/locations" render={(props) => {
-          return <LocationList />
+          return <LocationList {...props} />
         }} />
         <Route path="/locations/:locationId(\d+)" render={(props) => {
           // Pass the locationId to the LocationDetail Component
           return <LocationDetail locationId={parseInt(props.match.params.locationId)} />
         }} />
 
-        <Route exact path="/employees" render={(props) => {
-          return <EmployeeList />
+        <Route path="/locations/new" render={(props) => {
+          return <LocationForm {...props} />
+
         }} />
+
+
+
+
+
+
+        <Route exact path="/employees" render={(props) => {
+          return <EmployeeList {...props} />
+        }} />
+
+        <Route path="/employees/new" render={(props) => {
+          return <EmployeeForm {...props} />
+        }} />
+
+
+
+
         <Route exact path="/owners" render={(props) => {
           return <OwnerList />
         }} />
+
+        <Route path="/login" component={Login} />
+
       </React.Fragment>
     )
   }
