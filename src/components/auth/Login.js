@@ -29,6 +29,7 @@ class Login extends Component {
         })
     )
     this.props.history.push("/animals");
+    this.props.history.push("/locations");
 
   }
 
