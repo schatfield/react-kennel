@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import EmployeeManager from '../../modules/EmployeeManager';
-import './EmloyeeForm.css'
+import './EmployeeForm.css'
 
 
 class EmployeeForm extends Component {
@@ -27,7 +27,7 @@ class EmployeeForm extends Component {
         } else {
             this.setState({ loadingStatus: true });
             const employee = {
-                name: this.state.employeeName,
+                name: this.state.EmployeeName,
             };
 
             // Create the animal and redirect user to animal list
@@ -35,6 +35,8 @@ class EmployeeForm extends Component {
             .then(() => this.props.history.push("/employees"));
         }
     };
+
+
 
     render(){
 
@@ -56,7 +58,7 @@ class EmployeeForm extends Component {
                         <button
                         type="button"
                         disabled={this.state.loadingStatus}
-                        onClick={this.constructNewAnimal}
+                        onClick={this.constructNewEmployee}
                         >Submit</button>
                     </div>
                 </fieldset>
