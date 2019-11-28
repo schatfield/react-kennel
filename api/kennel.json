@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Angus",
       "breed": "Gerbil",
-      "employeeId": 7
+      "employeeId": 6
     },
     {
       "name": "Norbert",
@@ -19,10 +19,10 @@
       "employeeId": 8
     },
     {
+      "id": 4,
       "name": "Mrs. Norris",
       "breed": "Maine Coon",
-      "employeeId": 0,
-      "id": 4
+      "employeeId": 5
     },
     {
       "id": 5,
