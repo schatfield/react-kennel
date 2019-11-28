@@ -1,24 +1,59 @@
 {
   "animals": [
     {
-      "name": "Dingus",
-      "breed": "Groundhog",
-      "employeeId": 4,
+      "id": 1,
+      "name": "Angus",
+      "breed": "Gerbil",
+      "employeeId": 7
+    },
+    {
+      "name": "Norbert",
+      "breed": "Dragon",
+      "employeeId": 6,
       "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Jack",
+      "breed": "German Shepherd",
+      "employeeId": 8
+    },
+    {
+      "name": "Mrs. Norris",
+      "breed": "Maine Coon",
+      "employeeId": 0,
+      "id": 4
+    },
+    {
+      "id": 5,
+      "name": "Pierre",
+      "breed": "French Bulldog",
+      "employeeId": 8
+    }
+  ],
+  "employee_animals": [
+    {
+      "employeeId": 0,
+      "animalId": 0
     }
   ],
   "employees": [
-    {
-      "name": "John Chatfield",
-      "id": 4
-    },
     {
       "name": "Argus Filch",
       "id": 5
     },
     {
-      "name": "hagrid",
-      "id": 6
+      "id": 6,
+      "name": "Hagrid",
+      "employeeId": 0
+    },
+    {
+      "name": "Newt Scamander",
+      "id": 7
+    },
+    {
+      "name": "John Chatfield",
+      "id": 8
     }
   ],
   "locations": [
