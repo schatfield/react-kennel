@@ -1,71 +1,45 @@
 {
   "animals": [
     {
-      "id": 1,
-      "name": "Jack",
-      "breed": "German Shepherd",
-      "employeeId": 3
-    },
-    {
-      "id": 2,
-      "name": "Pierre",
-      "breed": "French Bulldog",
-      "employeeId": 1
-    },
-    {
-      "name": "Fang",
-      "breed": "Neapolitan Mastiff",
-      "id": 4,
-      "employeeId": 1
-    },
-    {
-      "name": "Angus",
-      "breed": "Gerbil",
-      "id": 5,
-      "employeeId": 2
+      "name": "Dingus",
+      "breed": "Groundhog",
+      "employeeId": 4,
+      "id": 2
     }
   ],
   "employees": [
     {
-      "id": 1,
-      "name": "John Chatfield"
-    },
-    {
-      "id": 2,
-      "name": "Newt Scamander"
-    },
-    {
-      "id": 3,
-      "name": "Professor Sprout"
-    },
-    {
-      "name": "Argus Filch",
+      "name": "John Chatfield",
       "id": 4
     },
     {
-      "name": "Hagrid",
+      "name": "Argus Filch",
       "id": 5
+    },
+    {
+      "name": "hagrid",
+      "id": 6
     }
   ],
   "locations": [
     {
-      "id": 1,
-      "location": "Nashville, TN"
-    },
-    {
-      "id": 2,
-      "location": "London, England"
-    },
-    {
       "id": 3,
-      "location": "Hogwarts School of Witchcraft and Wizardry"
+      "name": "Hogwarts School"
+    },
+    {
+      "name": "Miami, Florida",
+      "id": 5
+    },
+    {
+      "name": "Nashville, TN",
+      "id": 6
+    },
+    {
+      "name": "London, England",
+      "id": 8
     }
   ],
   "owners": [
-    {
-      "id": 1,
-      "name": "Eddy"
-    },
     {
       "id": 2,
       "name": "Shawna"
@@ -73,13 +47,9 @@
     {
       "id": 3,
       "name": "Alice Cooper"
+    },
+    {
+      "id": 4
     }
   ]
 }
-  
-
-
-
-
-
-

@@ -5,7 +5,7 @@ import './EmployeeForm.css'
 
 class EmployeeForm extends Component {
     state = {
-        name: "",
+        employeeName: "",
         loadingStatus: false,
     };
 
@@ -16,6 +16,7 @@ class EmployeeForm extends Component {
         const stateToChange = {};
         stateToChange[evt.target.id] = evt.target.value;
         console.log("state to change", stateToChange)
+    
         this.setState(stateToChange);
     };
 
@@ -25,12 +26,12 @@ class EmployeeForm extends Component {
     */
     constructNewEmployee = evt => {
         evt.preventDefault();
-        if (this.state.EmployeeName === "") {
+        if (this.state.employeeName === "") {
             window.alert("Please input an employee name");
         } else {
             this.setState({ loadingStatus: true });
             const employee = {
-                name: this.state.EmployeeName,
+                name: this.state.employeeName,
             };
 
             // Create the animal and redirect user to animal list

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import './EmployeeForm.css';
 
 class EmployeeCard extends Component {
@@ -10,9 +10,11 @@ class EmployeeCard extends Component {
           <h3>Name: <b>{this.props.employee.name}</b></h3>
           <p>Employee</p>
           <button type="button"
+            onClick={() => { this.props.history.push(`/employees/${this.props.employee.id}/edit`) }}>Edit</button>
+          <button type="button"
             onClick={() => this.props.deleteEmployee(this.props.employee.id)}>Discharge</button>
           <button type="button"
-            onClick={() => { this.props.history.push(`/employees/${this.props.employee.id}/details`) }}>Details</button>
+            onClick={() => { this.props.history.push(`/employees/${this.props.employee.id}`) }}>Details</button>
         </div>
       </div>
     );

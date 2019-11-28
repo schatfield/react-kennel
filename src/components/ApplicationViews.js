@@ -1,4 +1,4 @@
-import { Route, withRouter, Redirect } from "react-router-dom"
+import { Route, Redirect } from "react-router-dom"
 import React, { Component } from 'react'
 import Home from './home/Home'
 import AnimalList from './animal/AnimalList'
@@ -13,17 +13,19 @@ import AnimalEditForm from './animal/AnimalEditForm'
 import Login from './auth/Login'
 import EmployeeForm from './employee/EmployeeForm'
 import LocationForm from './location/LocationForm'
+import EmployeeEditForm from './employee/EmployeeEditForm'
 import EmployeeWithAnimals from './employee/EmployeeWithAnimals'
+import LocationEditForm from './location/LocationEditForm'
+import OwnerEditForm from './owner/OwnerEditForm'
+import OwnerForm from './owner/OwnerForm'
 
 
 
 class ApplicationViews extends Component {
 
-  isAuthenticated = () => localStorage.getItem("credentials") !== null
-  // this method checks to see what's in local storage
-
 
   render() {
+    
     return (
       <React.Fragment>
         <Route exact path="/" render={(props) => {
@@ -31,15 +33,11 @@ class ApplicationViews extends Component {
         }} />
 
         <Route exact path="/animals" render={props => {
-          if (this.isAuthenticated()) {
+          if (this.props.user) {
             return <AnimalList {...props} />
           } else {
             return <Redirect to="/login" />
           }
-        }} />
-
-        <Route path="/employees/:employeeId(\d+)/details" render={(props) => {
-          return <EmployeeWithAnimals {...props} />
         }} />
 
         {/*
@@ -72,17 +70,20 @@ class ApplicationViews extends Component {
         {/* Make sure you add the `exact` attribute here */}
 
         <Route exact path="/locations" render={props => {
-          if (this.isAuthenticated()) {
-            return <LocationList {...props} />
-          } else {
-            return <Redirect to="/login" />
-          }
-        }} />
+          return <LocationList {...props} />
+        }
+        } />
 
         <Route path="/locations/:locationId(\d+)" render={(props) => {
           // Pass the locationId to the LocationDetail Component
-          return <LocationDetail locationId={parseInt(props.match.params.locationId)} />
+          return <LocationDetail 
+            locationId={parseInt(props.match.params.locationId)} {...props} />
         }} />
+
+        <Route path="/locations/:locationId(\d+)/edit" render={(props) => {
+          return <LocationEditForm {...props} />
+        }}
+        />
 
         <Route path="/locations/new" render={(props) => {
           return <LocationForm {...props} />
@@ -92,13 +93,24 @@ class ApplicationViews extends Component {
 
 
 
-        <Route exact path="/employees" render={props => {
-          if (this.isAuthenticated()) {
+        <Route exact path="/employees" render={(props) => {
+          if (this.props.user) {
             return <EmployeeList {...props} />
           } else {
             return <Redirect to="/login" />
           }
         }} />
+
+        <Route path="/employees/:employeeId(\d+)" render={(props) => {
+           console.log("props", this.props)
+          return <EmployeeWithAnimals {...props}  />
+  
+        }} /> 
+
+        <Route path="/employees/:employeeId(\d+)/edit" render={(props) => {
+          return <EmployeeEditForm {...props} />
+        }}
+        />
 
         <Route path="/employees/new" render={(props) => {
           return <EmployeeForm {...props} />
@@ -107,16 +119,28 @@ class ApplicationViews extends Component {
 
 
 
-        <Route exact path="/owners" render={props => {
-          if (this.isAuthenticated()) {
+        <Route exact path="/owners" render={(props) => {
+          if (this.props.user) {
             return <OwnerList {...props} />
           } else {
             return <Redirect to="/login" />
           }
         }} />
 
-        <Route path="/login" component={Login} />
+        <Route path="/owners/:ownerId(\d+)/edit" render={(props) => {
+          return <OwnerEditForm {...props} />
+        }}
+        />
 
+        <Route path="/owners/new" render={(props) => {
+          return <OwnerForm {...props} />
+        }} />
+
+
+
+        <Route path="/login" render={(props) => {
+          return <Login setUser={this.props.setUser} {...props} />
+        }} />
       </React.Fragment>
     )
   }
@@ -126,3 +150,6 @@ export default ApplicationViews
 
 // isAuthenticated = () => localStorage.getItem("credentials") !== null
   // this method checks to see what's in local storage
+
+
+  // employee with animals used to EmployeeDetail

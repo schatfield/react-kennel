@@ -27,7 +27,7 @@ class LocationForm extends Component {
         } else {
             this.setState({ loadingStatus: true });
             const location = {
-                name: this.state.LocationName,
+                name: this.state.locationName,
             };
 
             // Create the location and redirect user to location list

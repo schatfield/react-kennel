@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom"
-import './owner.css' 
+// import { Link } from "react-router-dom"
+import './owner.css'
 
 class OwnerCard extends Component {
   render() {
@@ -9,7 +9,10 @@ class OwnerCard extends Component {
         <div className="card-content">
           <h3>Name: <b>{this.props.owner.name}</b></h3>
           <p>Owner</p>
-          <button type="button" onClick={() => this.props.deleteOwner(this.props.owners.id)}>Discharge</button>
+          <button type="button"
+            onClick={() => { this.props.history.push(`/owners/${this.props.owner.id}/edit`) }}>Edit</button>
+          <button type="button"
+            onClick={() => this.props.deleteOwner(this.props.owner.id)}>Discharge</button>
         </div>
       </div>
     );
@@ -17,5 +20,3 @@ class OwnerCard extends Component {
 }
 
 export default OwnerCard;
-
-  //* <Link to={`/owners/${this.props.owner.id}`}><button>Details</button></Link> */
