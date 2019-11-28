@@ -26,16 +26,17 @@ class EmployeeList extends Component {
       .then(() => {
         EmployeeManager.getAll()
           .then((newEmployees) => {
+            console.log("new", newEmployees)
             this.setState({
-              employee: newEmployees
+              employees: newEmployees
             })
           })
       })
   }
 
   render() {
-    console.log("EmployeeList: Render");
-    console.log(this.state)
+    // console.log("EmployeeList: Render");
+    // console.log(this.state)
 
     return (
       <React.Fragment>

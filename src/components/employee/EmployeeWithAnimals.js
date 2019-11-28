@@ -12,6 +12,7 @@ class EmployeeWithAnimals extends Component {
         //got here now make call to get employee with animal
         EmployeeManager.getWithAnimals(this.props.match.params.employeeId)
             .then((APIResult) => {
+              console.log("API RESULT", APIResult.animals)
             this.setState({
               employee: APIResult,
               animals: APIResult.animals,

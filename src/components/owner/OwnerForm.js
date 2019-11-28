@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import OwnerManager from '../../modules/OwnerManager';
 import './OwnerForm.css';
 
-class OwnerForm extends Componenet {
+class OwnerForm extends Component {
     state = {
         name: "",
         loadingStatus: false,
@@ -64,4 +64,4 @@ class OwnerForm extends Componenet {
     }
 }
 
-export default LocationForm;
+export default OwnerForm;

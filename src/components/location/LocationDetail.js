@@ -5,7 +5,7 @@ import './LocationDetail.css'
 class LocationDetail extends Component {
 
   state = {
-      location: "",
+      locationName: "",
       locadingStatus: true,
   }
 
@@ -16,7 +16,7 @@ class LocationDetail extends Component {
     .then((location) => {
       console.log("Locations: ", location);
       this.setState({
-        location: location.location,
+        locationName: location.name,
         locadingStatus: false
       });
     });
@@ -24,8 +24,8 @@ class LocationDetail extends Component {
 
   handleDelete = () => {
     this.setState({loadingStatus: true})
-    LocationManager.delete(this.props.animalId)
-    .then(() => this.props.history.push("/animals"))
+    LocationManager.delete(this.props.locationId)
+    .then(() => this.props.history.push("/locations"))
   }
   // invoke the delete function in LocationManager and re-direct to the location list
 
@@ -37,7 +37,7 @@ class LocationDetail extends Component {
                 <picture>
                   <img src={require('./dog.svg')} alt="My Dog" />
                 </picture>
-                <h3>Name: <span style={{ color: 'darkslategrey' }}>{this.state.location}</span></h3>
+                <h3>Name: <span style={{ color: 'darkslategrey' }}>{this.state.locationName}</span></h3>
                 <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Discharge</button>
               </div>
             </div>
