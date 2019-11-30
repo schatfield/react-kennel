@@ -1,23 +1,23 @@
 import { Route, Redirect } from "react-router-dom"
 import React, { Component } from 'react'
 import Home from './home/Home'
+import Login from './auth/Login'
 import AnimalList from './animal/AnimalList'
-// //only include these once they are built - previous practice exercise
 import LocationList from './location/LocationList'
 import EmployeeList from './employee/EmployeeList'
 import OwnerList from './owner/OwnerList'
 import AnimalDetail from './animal/AnimalDetail'
 import LocationDetail from './location/LocationDetail'
 import AnimalForm from './animal/AnimalForm'
-import AnimalEditForm from './animal/AnimalEditForm'
-import Login from './auth/Login'
 import EmployeeForm from './employee/EmployeeForm'
 import LocationForm from './location/LocationForm'
+import OwnerForm from './owner/OwnerForm'
+import AnimalEditForm from './animal/AnimalEditForm'
 import EmployeeEditForm from './employee/EmployeeEditForm'
-import EmployeeWithAnimals from './employee/EmployeeWithAnimals'
 import LocationEditForm from './location/LocationEditForm'
 import OwnerEditForm from './owner/OwnerEditForm'
-import OwnerForm from './owner/OwnerForm'
+import EmployeeWithAnimals from './employee/EmployeeWithAnimals'
+import LocationWithEmployees from './location/LocationWithEmployees'
 
 
 
@@ -25,7 +25,7 @@ class ApplicationViews extends Component {
 
 
   render() {
-    
+
     return (
       <React.Fragment>
         <Route exact path="/" render={(props) => {
@@ -76,8 +76,12 @@ class ApplicationViews extends Component {
 
         <Route path="/locations/:locationId(\d+)" render={(props) => {
           // Pass the locationId to the LocationDetail Component
-          return <LocationDetail 
+          return <LocationDetail
             locationId={parseInt(props.match.params.locationId)} {...props} />
+        }} />
+
+        <Route path="/locations/:locationId(\d+)/details" render={(props) => {
+          return <LocationWithEmployees {...props} />
         }} />
 
         <Route path="/locations/:locationId(\d+)/edit" render={(props) => {
@@ -102,10 +106,10 @@ class ApplicationViews extends Component {
         }} />
 
         <Route path="/employees/:employeeId(\d+)" render={(props) => {
-           console.log("props", this.props)
-          return <EmployeeWithAnimals {...props}  />
-  
-        }} /> 
+          console.log("props", this.props)
+          return <EmployeeWithAnimals {...props} />
+
+        }} />
 
         <Route path="/employees/:employeeId(\d+)/edit" render={(props) => {
           return <EmployeeEditForm {...props} />

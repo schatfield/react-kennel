@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import LocationManager from '../../modules/LocationManager'
-import EmployeeCard from '../location/EmployeeCard'
+import EmployeeCard from '../employee/EmployeeCard'
 
 class LocationWithEmployees extends Component {
     state = {
@@ -8,12 +8,13 @@ class LocationWithEmployees extends Component {
         employees: []
     }
     componentDidMount() {
+        // console.log("API RESULT", APIResult)
         // got here now make fetch call to get location with employee
         LocationManager.getWithEmployees(this.props.match.params.locationId)
             .then((APIResult) => {
-                this.setstate({
+                this.setState({
                     location: APIResult,
-                    employees: APIResult.employees,
+                    employees: APIResult.employees
                 })
 
             })
@@ -24,7 +25,7 @@ class LocationWithEmployees extends Component {
                 <p>Location: {this.state.location.name}</p>
                 {this.state.employees.map(employee =>
                     <EmployeeCard
-                        key={location.id}
+                        key={employee.id}
                         employee={employee}
                         {...this.props}
                     />

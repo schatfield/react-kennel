@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import './location.css'
 
 class LocationCard extends Component {
@@ -14,7 +14,8 @@ class LocationCard extends Component {
             onClick={() => { this.props.history.push(`/locations/${this.props.place.id}/edit`) }}>Edit</button>
           <button type="button"
             onClick={() => this.props.deleteLocation(this.props.place.id)}>Discharge</button>
-          <Link to={`/locations/${this.props.place.id}`}><button>Details</button></Link>
+            <button type="button"
+        onClick={() => { this.props.history.push(`/locations/${this.props.place.id}/details`) }}>Details</button>
         </div>
       </div>
     );
@@ -22,3 +23,4 @@ class LocationCard extends Component {
 }
 
 export default LocationCard;
+
