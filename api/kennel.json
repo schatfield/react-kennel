@@ -4,37 +4,70 @@
       "id": 1,
       "name": "Angus",
       "breed": "Gerbil",
-      "employeeId": 6
+      "employeeId": 7
     },
     {
+      "id": 2,
       "name": "Norbert",
       "breed": "Dragon",
-      "employeeId": 6,
-      "id": 2
+      "employeeId": 7
     },
     {
       "id": 3,
       "name": "Jack",
-      "breed": "German Shepherd",
-      "employeeId": 8
+      "breed": "German Shepherd"
     },
     {
       "id": 4,
       "name": "Mrs. Norris",
-      "breed": "Maine Coon",
-      "employeeId": 5
+      "breed": "Maine Coon"
     },
     {
       "id": 5,
       "name": "Pierre",
-      "breed": "French Bulldog",
-      "employeeId": 8
+      "breed": "French Bulldog"
+    },
+    {
+      "name": "Angus2",
+      "breed": "Gerblin",
+      "id": 6
+    },
+    {
+      "name": "turd",
+      "breed": "asdf",
+      "id": 7
+    },
+    {
+      "name": "Fred Ballsington",
+      "breed": "cracker",
+      "id": 8
+    },
+    {
+      "name": "Baby Fart",
+      "breed": "Balooga Whale",
+      "id": 9
+    },
+    {
+      "name": "Big Ole Donkey Dck",
+      "breed": "Donkey",
+      "id": 10
     }
   ],
   "employee_animals": [
     {
-      "employeeId": 0,
-      "animalId": 0
+      "animalId": 9,
+      "employeeId": 6,
+      "id": 1
+    },
+    {
+      "animalId": 9,
+      "employeeId": 10,
+      "id": 2
+    },
+    {
+      "animalId": 10,
+      "employeeId": 7,
+      "id": 3
     }
   ],
   "employees": [
@@ -52,8 +85,17 @@
       "id": 7
     },
     {
+      "id": 8,
       "name": "John Chatfield",
-      "id": 8
+      "employeeId": 0
+    },
+    {
+      "name": "Fuck Face",
+      "id": 9
+    },
+    {
+      "name": "Fuck Balloon",
+      "id": 10
     }
   ],
   "locations": [

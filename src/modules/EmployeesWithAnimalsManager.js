@@ -15,23 +15,23 @@ export default {
       .then(result => result.json())
   },
 
-  post(newEmployee, newAnimal) {
+  post(newEmployeeWithAnimal) {
     return fetch(`${remoteURL}/employee_animals`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(newEmployee,newAnimal)
+      body: JSON.stringify(newEmployeeWithAnimal)
     }).then(data => data.json())
-  }
+  },
   
-//   update(editedAnimal) {
-//     return fetch(`${remoteURL}/animals/${editedAnimal.id}`, {
-//       method: "PUT",
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       body: JSON.stringify(editedAnimal)
-//     }).then(data => data.json());
-//   }
-// }
+  update(editedAnimal) {
+    return fetch(`${remoteURL}/animals/${editedAnimal.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(editedAnimal)
+    }).then(data => data.json());
+  }
+}

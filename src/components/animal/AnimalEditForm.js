@@ -26,7 +26,7 @@ class AnimalEditForm extends Component {
       id: this.props.match.params.animalId,
       name: this.state.animalName,
       breed: this.state.breed,
-      employeeId: Number (this.state.employeeId)
+      // employeeId: Number (this.state.employeeId)
     };
 
     AnimalManager.update(editedAnimal)
