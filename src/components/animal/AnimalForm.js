@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import AnimalManager from '../../modules/AnimalManager';
 import EmployeeManager from '../../modules/EmployeeManager'
+import EmployeesWithAnimalsManager from '../../modules/EmployeesWithAnimalsManager'
+
 import './AnimalForm.css'
 
 class AnimalForm extends Component {
@@ -9,19 +11,19 @@ class AnimalForm extends Component {
         breed: "",
         employeeId: "",
         loadingStatus: false,
-        employees:[]
+        employees: []
     };
 
     handleFieldChange = evt => {
         // this is javascript. handle an event
         // console.log("Event target id", evt.target.id)
         // console.log("Event target value", evt.target.value)
-        
+
         const stateToChange = {};
         stateToChange[evt.target.id] = evt.target.value;
         // console.log("stateToChange", stateToChange)
-        this.setState(stateToChange); 
-        console.log(this.state);       
+        this.setState(stateToChange);
+        console.log(this.state);
         // sqaure bracket notation for object is being used above stateToChange[evt.target.id]. REVIEW OBJECTS CHAPTER IN BOOK 2
         // which input fields is this targeting? see state object above- animal name and breed
     };
@@ -37,12 +39,23 @@ class AnimalForm extends Component {
             const animal = {
                 name: this.state.animalName,
                 breed: this.state.breed,
-                employeeId: Number (this.state.employeeId)
             };
 
             // Create the animal and redirect user to animal list
             AnimalManager.post(animal)
-                .then(() => this.props.history.push("/animals"));
+                .then(newAnimal => {
+                    console.log("new animal", newAnimal)
+
+                    this.props.history.push("/animals")
+                    const employeeWithAnimal = {
+                        animalId: Number(newAnimal.id),
+                        employeeId: Number(this.state.employeeId)
+                    };
+                    console.log("employeeWithAnimal: ", employeeWithAnimal);
+                    EmployeesWithAnimalsManager.post(employeeWithAnimal)
+                    
+
+                })
         }
 
         // if (this.state.animalName === "" || this.state.breed === "") this is saying if the state of the animal name field is empty, if the state of the breed field is empty, then alert with a pop window.
@@ -58,10 +71,10 @@ class AnimalForm extends Component {
         //       loadingStatus: false,
         //     });
         //   });
-    
-          EmployeeManager.getAll()
-          .then(employees => this.setState({employees: employees}))
-      }
+
+        EmployeeManager.getAll()
+            .then(employees => this.setState({ employees: employees }))
+    }
 
     render() {
 
