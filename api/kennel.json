@@ -73,29 +73,25 @@
   "employees": [
     {
       "name": "Argus Filch",
-      "id": 5
+      "id": 5,
+      "locationId": 3
     },
     {
       "id": 6,
       "name": "Hagrid",
-      "employeeId": 0
+      "locationId": 3
     },
     {
       "name": "Newt Scamander",
-      "id": 7
+      "id": 7,
+      "locationId": 8
+
     },
     {
       "id": 8,
       "name": "John Chatfield",
-      "employeeId": 0
-    },
-    {
-      "name": "Fuck Face",
-      "id": 9
-    },
-    {
-      "name": "Fuck Balloon",
-      "id": 10
+      "locationId": 6
+
     }
   ],
   "locations": [
