@@ -15,26 +15,28 @@
     {
       "id": 3,
       "name": "Jack",
-      "breed": "German Shepherd"
+      "breed": "German Shepherd",
+      "employeeId": 9
     },
     {
       "id": 4,
       "name": "Mrs. Norris",
-      "breed": "Maine Coon"
+      "breed": "Maine Coon",
+      "employeeId": 5
     },
     {
       "id": 5,
       "name": "Pierre",
-      "breed": "French Bulldog"
+      "breed": "French Bulldog",
+      "employeeId": 8
     },
     {
       "name": "Angus2",
       "breed": "Gerblin",
-      "id": 6
+      "id": 6,
+      "employeeId": 7
     }
   ],
-  "employee_animals": [],
-  
   "employees": [
     {
       "name": "Argus Filch",
@@ -44,7 +46,7 @@
     {
       "id": 6,
       "name": "Hagrid",
-      "locationId": 3
+      "locationId": 5
     },
     {
       "name": "Newt Scamander",
@@ -55,6 +57,16 @@
       "id": 8,
       "name": "John Chatfield",
       "locationId": 6
+    },
+    {
+      "id": 9,
+      "name": "Someone New",
+      "locationId": 9
+    },
+    {
+      "id": 10,
+      "name": "Mari Teri",
+      "locationId": 9
     }
   ],
   "locations": [
@@ -73,6 +85,10 @@
     {
       "name": "London, England",
       "id": 8
+    },
+    {
+      "name": "Osaka, Japan",
+      "id": 9
     }
   ],
   "owners": [

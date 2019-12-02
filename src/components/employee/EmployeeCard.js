@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './EmployeeForm.css';
 
 class EmployeeCard extends Component {
   render() {
+
+    let deleteEmployeeButton = "";
+
+    if (this.props.deleteEmployee) {
+      console.log("DELETE CHECK: ");
+      deleteEmployeeButton = <button type="button" onClick={() => this.props.deleteEmployee(this.props.employee.id)}>Discharge</button>
+      
+     };
+
     return (
       <div className="card">
         <div className="card-content">
@@ -11,10 +20,8 @@ class EmployeeCard extends Component {
           <p>Employee</p>
           <button type="button"
             onClick={() => { this.props.history.push(`/employees/${this.props.employee.id}/edit`) }}>Edit</button>
-          <button type="button"
-            onClick={() => this.props.deleteEmployee(this.props.employee.id)}>Discharge</button>
-          <button type="button"
-            onClick={() => { this.props.history.push(`/employees/${this.props.employee.id}`) }}>Details</button>
+             <Link to={`/employees/${this.props.employee.id}`}><button>Details</button></Link>
+          {deleteEmployeeButton}
         </div>
       </div>
     );

@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import "./EmployeeForm.css"
 import EmployeeManager from "../../modules/EmployeeManager"
+import LocationManager from "../../modules/LocationManager"
 
 class EmployeeEditForm extends Component {
   //set the initial state
@@ -8,6 +9,8 @@ class EmployeeEditForm extends Component {
     employeeName: "",
     employeeId: "",
     loadingStatus: true,
+    locations: [],
+    locationId: "",
   };
 
   handleFieldChange = evt => {
@@ -19,10 +22,10 @@ class EmployeeEditForm extends Component {
   updateExistingEmployee = evt => {
     evt.preventDefault()
     this.setState({ loadingStatus: true });
-    const editedEmployee= {
+    const editedEmployee = {
       id: this.props.match.params.employeeId,
       name: this.state.employeeName,
-      employeeId: Number (this.state.employeeId)
+      locationId: Number(this.state.locationId)
     };
 
     EmployeeManager.update(editedEmployee)
@@ -31,15 +34,15 @@ class EmployeeEditForm extends Component {
 
   componentDidMount() {
     EmployeeManager.get(this.props.match.params.employeeId)
-      .then(employee=> {
+      .then(employee => {
         this.setState({
           employeeName: employee.name,
           loadingStatus: false,
         });
       });
 
-      EmployeeManager.getAll()
-      .then(employees => this.setState({employees: employees}))
+    LocationManager.getAll()
+      .then(locations => this.setState({ locations: locations }))
   }
 
   render() {
@@ -57,6 +60,19 @@ class EmployeeEditForm extends Component {
                 value={this.state.employeeName}
               />
               <label htmlFor="employeeName">Employee name</label>
+
+              <select
+                className="form-control"
+                id="locationId"
+                value={this.state.locationId}
+                onChange={this.handleFieldChange}
+              >
+                {this.state.locations.map(place =>
+                  <option key={place.id} value={place.id}>
+                    {place.name}
+                  </option>
+                )}
+              </select>
             </div>
             <div className="alignRight">
               <button

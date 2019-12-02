@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import AnimalManager from '../../modules/AnimalManager';
 import EmployeeManager from '../../modules/EmployeeManager'
-import EmployeesWithAnimalsManager from '../../modules/EmployeesWithAnimalsManager'
-
 import './AnimalForm.css'
 
 class AnimalForm extends Component {
@@ -39,22 +37,13 @@ class AnimalForm extends Component {
             const animal = {
                 name: this.state.animalName,
                 breed: this.state.breed,
+                employeeId: Number(this.state.employeeId)
             };
 
             // Create the animal and redirect user to animal list
             AnimalManager.post(animal)
-                .then(newAnimal => {
-                    console.log("new animal", newAnimal)
-
+                .then(() => {
                     this.props.history.push("/animals")
-                    const employeeWithAnimal = {
-                        animalId: Number(newAnimal.id),
-                        employeeId: Number(this.state.employeeId)
-                    };
-                    console.log("employeeWithAnimal: ", employeeWithAnimal);
-                    EmployeesWithAnimalsManager.post(employeeWithAnimal)
-                    
-
                 })
         }
 

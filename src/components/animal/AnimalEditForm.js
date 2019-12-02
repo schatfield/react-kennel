@@ -1,6 +1,6 @@
 import React, { Component } from "react"
-import AnimalManager from "../../modules/AnimalManager"
 import "./AnimalForm.css"
+import AnimalManager from "../../modules/AnimalManager"
 import EmployeeManager from "../../modules/EmployeeManager"
 
 class AnimalEditForm extends Component {
@@ -26,7 +26,7 @@ class AnimalEditForm extends Component {
       id: this.props.match.params.animalId,
       name: this.state.animalName,
       breed: this.state.breed,
-      // employeeId: Number (this.state.employeeId)
+      employeeId: Number (this.state.employeeId)
     };
 
     AnimalManager.update(editedAnimal)
